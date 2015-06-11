@@ -1,0 +1,6 @@
+## YAML Template.
+jenkins:
+    image: jenkins
+    ports: 8181:8080
+    
+    
