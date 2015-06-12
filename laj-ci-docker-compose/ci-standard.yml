@@ -1,6 +1,6 @@
 ## YAML Template.
 sonar:
-    image: sonar
+    image: sonarqube
     ports:
         - "50001:9000"
         - "50002:9092"
