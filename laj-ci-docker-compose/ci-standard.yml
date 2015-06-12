@@ -1,5 +1,14 @@
 ## YAML Template.
+sonar:
+    image: sonar
+    ports:
+        - "50001:9000"
+        - "50002:9092"
 jenkins:
-    image: jenkins
+    image: lars1974/jenkins:beta
+    ports:
+        - "50000:8080"
+    links:
+        - sonarqube:sonarqube
     
     
