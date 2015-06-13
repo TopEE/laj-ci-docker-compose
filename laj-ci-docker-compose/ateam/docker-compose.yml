@@ -7,7 +7,7 @@ sonarqube:
 jenkins:
     image: lars1974/jenkins:beta
     volumes:
-        - /c/users/dockervolumes/ateam/jenkins:/var/jenkins_home
+        - /c/Users/Lars/dockervolumes/ateam/jenkins:/var/jenkins_home
     ports:
         - "50000:8080"
     links:
