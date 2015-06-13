@@ -15,7 +15,7 @@ sonarqube:
         - "50001:9000"
         - "50002:9092"
     links:
-        - mysql: mysql
+        - mysql:mysql
     environment: 
         SONARQUBE_JDBC_USERNAME: user
         SONARQUBE_JDBC_PASSWORD: 12345678
@@ -27,6 +27,6 @@ jenkins:
     ports:
         - "50000:8080"
     links:
-        - sonarqube: sonarqube
+        - sonarqube:sonarqube
     
     
