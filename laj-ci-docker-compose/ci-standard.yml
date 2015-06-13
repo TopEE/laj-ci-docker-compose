@@ -1,4 +1,4 @@
-## YAML Template.
+## ATeam docker composer
 sonarqube:
     image: sonarqube
     ports:
@@ -6,6 +6,8 @@ sonarqube:
         - "50002:9092"
 jenkins:
     image: lars1974/jenkins:beta
+    volumes:
+        - /c/users/dockervolumes/ateam/jenkins:/var/jenkins_home jenkins
     ports:
         - "50000:8080"
     links:
