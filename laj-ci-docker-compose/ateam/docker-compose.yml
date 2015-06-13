@@ -4,6 +4,7 @@ mysql:
     volumes:
         - /c/Users/Lars/dockervolumes/ateam/mysql:/var/lib/mysql
     environment:
+        MYSQL_ROOT_PASSWORD: my-secret-pw
         MYSQL_DATABASE: sonar
         MYSQL_USER: sonar
         MYSQL_PASSWORD: sonar
