@@ -14,7 +14,7 @@ sonarqube:
     image: sonarqube
     ports:
         - "50001:9000"
-        - "50002:9092"
+        - "50002:3306"
     links:
         - mysql:mysql
     environment: 
