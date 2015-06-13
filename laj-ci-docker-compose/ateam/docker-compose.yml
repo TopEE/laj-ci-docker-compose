@@ -2,11 +2,11 @@
 mysql:
     image: mysql:5.5.44
     volumes:
-        - /c/Users/Lars/dockervolumes/ateam/mysql: /var/lib/mysql
+        - /c/Users/Lars/dockervolumes/ateam/mysql:/var/lib/mysql
     environment:
-        - MYSQL_DATABASE: sonar
-        - MYSQL_USER: user
-        - MYSQL_PASSWORD: 12345678
+        MYSQL_DATABASE: sonar
+        MYSQL_USER: user
+        MYSQL_PASSWORD: 12345678
     ports:
         - "50004:3306"
 sonarqube:
@@ -17,13 +17,13 @@ sonarqube:
     links:
         - mysql: mysql
     environment: 
-        - SONARQUBE_JDBC_USERNAME: user
-        - SONARQUBE_JDBC_PASSWORD: 12345678
-        - SONARQUBE_JDBC_URL: jdbc:mysql:3306//mysql/sonar
+        SONARQUBE_JDBC_USERNAME: user
+        SONARQUBE_JDBC_PASSWORD: 12345678
+        SONARQUBE_JDBC_URL: jdbc:mysql:3306//mysql/sonar
 jenkins:
     image: lars1974/jenkins:beta
     volumes:
-        - /c/Users/Lars/dockervolumes/ateam/jenkins: /var/jenkins_home
+        - /c/Users/Lars/dockervolumes/ateam/jenkins:/var/jenkins_home
     ports:
         - "50000:8080"
     links:
