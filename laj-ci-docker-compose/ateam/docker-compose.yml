@@ -11,14 +11,12 @@ mysql:
     ports:
         - "50004:3306"
 sonarqube:
-    image: sonarqube
+    image: lars1974/sonarqube
     ports:
         - "50001:9000"
         - "50002:3306"
     links:
         - mysql:mysql
-    environment: 
-        SONARQUBE_JDBC_URL: jdbc:mysql//mysql:3306/sonar?user=sonar&password=sonar
 jenkins:
     image: lars1974/jenkins:beta
     volumes:
