@@ -17,8 +17,8 @@ sonarqube:
         - "50002:9092"
     links:
         - mysql:mysql
-    environment: 
-        SONARQUBE_JDBC_URL: jdbc:mysql//mysql:3306/sonar
+    #environment: 
+        #SONARQUBE_JDBC_URL: jdbc:mysql//mysql:3306/sonar
 jenkins:
     image: lars1974/jenkins:beta
     volumes:
