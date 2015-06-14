@@ -25,5 +25,6 @@ jenkins:
         - "50000:8080"
     links:
         - sonarqube:sonarqube
+        - mysql:mysql
     
     
