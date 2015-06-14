@@ -17,6 +17,8 @@ sonarqube:
         - "50002:3306"
     links:
         - mysql:mysql
+    volumes:
+        - /c/Users/Lars/dockervolumes/ateam/sonarqube:/opt/sonarqube
 jenkins:
     image: lars1974/jenkins:beta
     volumes:
@@ -26,5 +28,7 @@ jenkins:
     links:
         - sonarqube:sonarqube
         - mysql:mysql
+        
+        
     
     
