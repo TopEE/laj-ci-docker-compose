@@ -17,8 +17,8 @@ sonarqube:
         - "50002:3306"
     links:
         - mysql:mysql
-    volumes:
-        - /c/Users/Lars/dockervolumes/ateam/sonarqube:/opt/sonarqube
+    environment: 
+        MYSQL_ROOT_PASSWORD: jdbc:mysql//localhost:3306?useUnicode=true&characterEncoding=utf8"
 jenkins:
     image: lars1974/jenkins:beta
     volumes:
