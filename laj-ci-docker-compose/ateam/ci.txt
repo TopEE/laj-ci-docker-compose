@@ -1,0 +1,39 @@
+curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+start CI system
+
+MYSQL
+
+docker run -it --name ateam_mysql ^
+-v /c/Users/Lars/dockervolumes/ateam/mysql:/var/lib/mysql ^
+-e MYSQL_ROOT_PASSWORD=my-secret-pw ^
+-e MYSQL_DATABASE=sonar ^
+-e MYSQL_USER=sonar ^
+-e MYSQL_PASSWORD=sonar ^
+-p 50002:3306 ^
+mysql
+
+ctrl+p+q for at komme ud
+
+SONAR
+
+docker run -it --name ateam_sonarqube ^
+-p 50001:9000 ^
+--link ateam_mysql:mysql ^
+-e SONARQUBE_JDBC_URL="jdbc:mysql://mysql/sonar?useUnicode=true&characterEncoding=utf8" ^
+sonarqube
+
+ctrl+p+q for at komme ud
+
+JENKINS
+
+docker run -it --name ateam_jenkins ^
+-p 50000:8080 ^
+--link ateam_sonarqube:sonarqube ^
+-v /c/Users/Lars/dockervolumes/ateam/jenkins:/var/jenkins_home ^
+lars1974/jenkins:beta
+
+
+
+
