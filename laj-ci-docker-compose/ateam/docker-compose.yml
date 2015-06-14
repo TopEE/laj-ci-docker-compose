@@ -19,6 +19,8 @@ sonarqube:
         - mysql:mysql
     environment: 
         SONARQUBE_JDBC_URL: "jdbc:mysql//mysql/sonar?useUnicode=true&characterEncoding=utf8"
+        SONARQUBE_JDBC_USERNAME: sonar
+        SONARQUBE_JDBC_PASSWORD: sonar
 jenkins:
     image: lars1974/jenkins:beta
     volumes:
