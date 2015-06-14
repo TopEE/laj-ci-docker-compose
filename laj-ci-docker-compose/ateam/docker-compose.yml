@@ -18,7 +18,7 @@ sonarqube:
     links:
         - mysql:mysql
     environment: 
-        SONARQUBE_JDBC_URL: jdbc:mysql//mysql:3306?useUnicode=true&characterEncoding=utf8"
+        SONARQUBE_JDBC_URL: jdbc:mysql//mysql?useUnicode=true&characterEncoding=utf8"
 jenkins:
     image: lars1974/jenkins:beta
     volumes:
