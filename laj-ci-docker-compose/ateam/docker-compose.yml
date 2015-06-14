@@ -11,7 +11,7 @@ mysql:
     ports:
         - "50004:3306"
 sonarqube:
-    image: lars1974/sonarqube:beta
+    image: sonarqube:beta
     ports:
         - "50001:9000"
         - "50002:3306"
