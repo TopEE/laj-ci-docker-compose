@@ -1,33 +1,17 @@
 ## ATeam docker composer
-mysql:
-    image: mysql:5.5.44
-    volumes:
-        - /c/Users/Lars/dockervolumes/ateam/mysql:/var/lib/mysql
-    environment:
-        MYSQL_ROOT_PASSWORD: my-secret-pw
-        MYSQL_DATABASE: sonar
-        MYSQL_USER: sonar
-        MYSQL_PASSWORD: sonar
-    ports:
-        - "50004:3306"
+
 sonarqube:
-    image: lars1974/sonarqube:beta
+    image: sonarqube
     ports:
         - "50001:9000"
-    links:
-        - mysql:mysql
-    environment: 
-        - SONARQUBE_JDBC_USERNAME=sonar
-        - SONARQUBE_JDBC_PASSWORD=sonar
 jenkins:
-    image: lars1974/jenkins:beta
+    image: tophackathon/ci-java8:beta
     volumes:
         - /c/Users/Lars/dockervolumes/ateam/jenkins:/var/jenkins_home
     ports:
         - "50000:8080"
     links:
         - sonarqube:sonarqube
-        - mysql:mysql
         
         
     
