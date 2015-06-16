@@ -1,11 +1,10 @@
 ## ATeam docker composer
-
 sonarqube:
     image: sonarqube
     ports:
         - "50001:9000"
 jenkins:
-    image: tophackathon/ci-java8:beta
+    image: tophackathon/ci-java8
     volumes:
         - /c/Users/Lars/dockervolumes/ateam/jenkins:/var/jenkins_home
     ports:
